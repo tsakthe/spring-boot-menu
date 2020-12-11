@@ -6,6 +6,7 @@ import com.vapasi.springbootmenu.request.MenuDto;
 import com.vapasi.springbootmenu.response.MenuResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,7 @@ public class MenuService {
         return listMenuResponse;
     }
 
+    @Transactional
     public void deleteMenu(String name) {
         menuRepository.deleteByName(name);
     }
